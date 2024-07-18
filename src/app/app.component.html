@@ -31,6 +31,21 @@
 
 <!--! Event Binding-->
 
-<button (click)="buttonClick()">CLİCK ME</button>
+<button (click)="buttosnClick()">CLİCK ME</button>
+<br><br>
+<button (mouseover)="buttosnClick()">MOUSEOVER ME</button>
+<br><br>
+<input type="text" (keyup)="keyEnter($event)">
+<br><br>
+<input type="text" (keyup.enter) = "keyupFiltering(user)" #user id="userInput">
+<br><br>
+<input type="text" [value]="userName" #username (keyup.enter)="updateUserName(username)">
+<br><br>
+<!--*  TWO WAY DATA BİNDİNG-->
+
+<input type="text"  [(ngModel)]="userName">
+
+
+
 <!--<img [src]="imgURL" alt="">-->
 

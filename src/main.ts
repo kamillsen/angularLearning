@@ -6,6 +6,6 @@ import { AppComponent } from './app/app.component';
  */
 import { AppNavbar } from './app/navbar/navbar.component';
 
-/* index.html sayfamızın oluşturduğumuz componentten haberdar olup onu görmesini sağlar */
+// ^ index.html sayfamızın oluşturduğumuz componentten haberdar olup onu görmesini sağlar 
 bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));
