@@ -41,9 +41,14 @@
 <br><br>
 <input type="text" [value]="userName" #username (keyup.enter)="updateUserName(username)">
 <br><br>
-<!--*  TWO WAY DATA BİNDİNG-->
+<!--
+*  TWO WAY DATA BİNDİNG
+*  Bunun özelliği bizim func ile atama yapmamızı gerek kalmıyo dinamik bir şekilde atama yapıyor
+-->
 
-<input type="text"  [(ngModel)]="userName">
+<input type="text"  [(ngModel)]="userName"> 
+
+<h3>{{userName}}</h3>
 
 
 

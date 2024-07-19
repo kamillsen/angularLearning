@@ -46,6 +46,11 @@ $kamil: any;
     this.userName = username.value
     console.log(this.userName);
   }
+
+  onKeyup(){
+    console.log(this.userName)
+
+  }
  
 }
 
