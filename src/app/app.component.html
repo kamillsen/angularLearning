@@ -1,0 +1,24 @@
+
+<!--* Old Way-->
+<h2 *ngIf="isLoggedIn; else message">{{userName}}</h2>
+
+<h2 *ngIf="!isLoggedIn">User is not Logged in </h2>
+
+<ng-template #message>
+    <h4>
+        User is not logged in (loaded using ng-template)
+    </h4>
+</ng-template>
+<br><br>
+
+<!--* New Way-->
+@if(isLoggedIn) {
+    <h3 >{{userName}}</h3>
+}
+@else{
+    <h3 >User is not logged in (loaded using if syntax block)</h3>
+}
+
+@if(!isLoggedIn) {
+    <h3 >User is not logged in (loaded using if syntax block)</h3>
+}
