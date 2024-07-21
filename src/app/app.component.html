@@ -1,0 +1,6 @@
+<div [ngSwitch]="userRole">
+    <p *ngSwitchCase="'Admin'">Welcome Admin</p>
+    <p *ngSwitchCase="'Member'">Welcome Member</p>
+
+    <p *ngSwitchDefault>Please Login</p> <!--* Eğer userRole boş ise bu döner-->
+</div>
