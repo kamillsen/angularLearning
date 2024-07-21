@@ -124,14 +124,33 @@
 }
 </ul>
 
-<ul>
-    <li *ngFor="let usersobj of usersObj">{{usersobj.name}}</li>
-</ul>
 
 @for(user of usersObj;track user){
 
-   <li>{{user.name}}</li> 
+   <li>{{user.name}} <button (click)="onDelete1(user)">Delete</button></li> 
 }
+
+
+<p *ngIf="usersObj.length==0"> No User To Display</p>
+
+<ul>
+    <li *ngFor="let usersobj of usersObj; let i = index; let usersCount = count">
+        {{usersCount}}-{{i}} {{usersobj.name}} 
+        <button (click)="onDelete2(2)">Delete</button></li>
+        
+</ul>
+
+
+    <h1>Yeni Söz Dizimi İle </h1>
+@for(user of usersObj;track user; let i = $index; let usersCount =  $count){ <!--* $ işareti önemli burda-->
+
+    <li>{{usersCount}} {{user.name}} <button (click)="onDelete2(i)">Delete</button></li> 
+    
+ }
+
+<!--* Change Detection-->
+
+<button (click)="addNewUser()">Add New User</button>
 
 
 
