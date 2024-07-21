@@ -141,11 +141,17 @@
 </ul>
 
 
-    <h1>Yeni Söz Dizimi İle </h1>
-@for(user of usersObj;track user; let i = $index; let usersCount =  $count){ <!--* $ işareti önemli burda-->
+@if(usersObj.length== 0){
+    <p>No Users to Display - Loaded Using Syntax</p>
+}
 
-    <li>{{usersCount}} {{user.name}} <button (click)="onDelete2(i)">Delete</button></li> 
-    
+    <h1>Yeni Söz Dizimi İle </h1>
+@for(user of usersObj;track user; let i = $index; let usersCount =  $count; let first = $first; let last = $last){ <!--* $ işareti önemli burda-->
+
+    <li>{{first}} {{last}} {{usersCount}} {{user.name}} <button (click)="onDelete2(i)">Delete</button></li> 
+ }
+ @empty {
+    <p>No Users to Display - Loaded Using Syntax</p>
  }
 
 <!--* Change Detection-->
